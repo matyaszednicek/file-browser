@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+## Ultima Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### How to run:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm i
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Assignment:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Create a new git repository
+- Create custom REST API server in NodeJS (framework or end solution is up to you)
+- Write API handler so serve files and folder contents based on given path
+  - API `/` corresponds to the root folder of your application, so `https://localhost:3101/Users/john/downloads` should return contents of `/Users/john/Downloads` folder
+  - Feel free to either use path, query params or POST to pass current path to API
+- Create website in React (framework of your choice) to display user's filesystem
+  - Browser URL path corresponds to the filesystem path and should be updated accordingly (`/` === root of filesystem)
+  - so `https://localhost:3001/Users/john/downloads` renders contents of `/Users/john/Downloads` folder
+  - Clicking on folders should navigate into them
+  - Use separate icons for folders and files
+- You should be able to navigate between folders by clicking on them
+- Use `..` to go up one level
+- Any additional work (preview file contents, unit/integration/E2E tests are welcomed but not mandatory)
